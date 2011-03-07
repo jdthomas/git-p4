@@ -1007,6 +1007,7 @@ class P4Sync(Command):
         return filesForCommit
 
     def commit(self, details, files, branch, branchPrefixes, parent = ""):
+        if "code" in details and details["code"] == "error": return
         epoch = details["time"]
         author = details["user"]
 
